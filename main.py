@@ -5,11 +5,11 @@ import yt_dlp
 
 app = FastAPI()
 
-# THE CORS FIX: We explicitly whitelist your Vercel site so it doesn't get blocked.
+# THE CORS FIX: Whitelisting the exact Vercel production URL
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://r-industries-music-line.vercel.app/"  # <--- REPLACE THIS WITH YOUR REAL VERCEL LINK
+    "https://r-industries-music-line.vercel.app"  # Fixed: changed http to https and removed trailing slash
 ]
 
 app.add_middleware(
